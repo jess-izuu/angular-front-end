@@ -1,0 +1,10 @@
+<div class="container">
+  <p>Edit this fund!</p>
+  <div>NAME <input [(ngModel)]="fund.name" /></div>
+
+  <div>TICKER <input [(ngModel)]="fund.ticker" /></div>
+  <div>ASSET CLASS <input [(ngModel)]="fund.asset_class" /></div>
+  <div>RISK LEVEL <input [(ngModel)]="fund.risk_level" /></div>
+  <div>EXPENSE RATIO <input [(ngModel)]="fund.expense_ratio" /></div>
+  <button (click)="update()">update</button>
+</div>

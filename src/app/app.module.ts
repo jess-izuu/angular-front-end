@@ -3,16 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FundsComponent } from './funds/funds.component';
+import { FundComponent } from './fund/fund.component';
+import { HttpClientModule } from '@angular/common/http';
+import { EditFundComponent } from './edit-fund/edit-fund.component';
+import { FormsModule } from '@angular/forms';
+import { AddfundComponent } from './addfund/addfund.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FundsComponent,
+    FundComponent,
+    EditFundComponent,
+    AddfundComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

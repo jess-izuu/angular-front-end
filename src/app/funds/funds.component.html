@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Vanguard ETF Funds</h1>
+
+  <div class="row">
+    <div class="col-sm-4" *ngFor="let fund of funds">
+      <div class="card-body">
+        <a [routerLink]="['/funds', fund.id]"> {{ fund.name }}</a>
+        <p class="card-text">
+          {{ fund.summary }}
+        </p>
+        <button (click)="edit(fund.id)">Edit Fund</button>
+        <button (click)="delete(fund)">Delete Fund</button>
+      </div>
+      <hr />
+    </div>
+  </div>
+  <button (click)="add(fund)">Add Fund</button>
+</div>
