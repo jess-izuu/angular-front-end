@@ -1,22 +1,23 @@
 <div class="container">
+  Name:
   <h1>{{ fund.name }}</h1>
 
   <p>
-    {{ fund.ticker }}
+    Ticker: {{ fund.ticker }}
     <br />
-    {{ fund.asset_class }}
+    Asset class: {{ fund.asset_class }}
     <br />
-    {{ fund.risk_level }}
+    Risk level: {{ fund.risk_level }}
     <br />
-    {{ fund.expense_ratio }}
+    Expense ratio: {{ fund.expense_ratio }}
     <br />
-    {{ fund.investment_min }}
+    Investment min: {{ fund.investment_min }}
     <br />
-    {{ fund.price }}
+    Price: {{ fund.price }}
     <br />
-    {{ fund.change_price }}
+    Change price: {{ fund.change_price }}
     <br />
-    {{ fund.summary }}
+    Summary: {{ fund.summary }}
   </p>
 
   <button (click)="edit()">Edit Fund</button>

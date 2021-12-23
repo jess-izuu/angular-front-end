@@ -10,17 +10,15 @@
       {{ fund[1] }}
     </div>
 
-    <div *ngIf="fund[2] == true">
+    <div *ngIf="fund[2] == true && fund[0] !== 'summary'">
       {{ fund[0].charAt(0).toUpperCase() + fund[0].slice(1) }} :
-      <input [(ngModel)]="fund[1]" />
+      <input (blur)="makeStatic(i)" [(ngModel)]="fund[1]" />
+    </div>
+    <div *ngIf="fund[2] == true && fund[0] == 'summary'">
+      {{ fund[0].charAt(0).toUpperCase() + fund[0].slice(1) }} :
+      <textarea (blur)="makeStatic(i)" [(ngModel)]="fund[1]"></textarea>
     </div>
     <hr />
   </div>
-  <!-- <div>NAME <input [(ngModel)]="fund.name" /></div>
-
-  <div>TICKER <input [(ngModel)]="fund.ticker" /></div>
-  <div>ASSET CLASS <input [(ngModel)]="fund.asset_class" /></div>
-  <div>RISK LEVEL <input [(ngModel)]="fund.risk_level" /></div>
-  <div>EXPENSE RATIO <input [(ngModel)]="fund.expense_ratio" /></div> -->
   <button (click)="update()">update</button>
 </div>

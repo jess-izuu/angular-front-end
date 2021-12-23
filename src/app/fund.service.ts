@@ -29,7 +29,7 @@ export class FundService {
     return this.http.delete(`${this.URL}/${id}`);
   }
 
-  addFund(fund: Fund): Observable<any> {
+  addFund(fund: any): Observable<any> {
     return this.http.post(`${this.URL}`, fund);
   }
 }

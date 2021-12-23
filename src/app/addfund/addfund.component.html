@@ -1,17 +1,21 @@
 <h1>Add a New ETF Fund</h1>
-<p>freiogvnroeigjvreiojgerg</p>
-<!-- <div class="row">
-    <div class="col-sm-4" *ngFor="let fund of funds">
-      <div class="card-body">
-        <a [routerLink]="['/funds', fund.id]"> {{ fund.name }}</a>
-        <p class="card-text">
-          {{ fund.summary }}
-        </p>
-        <button (click)="edit(fund.id)">Edit Fund</button>
-        <button (click)="delete(fund)">Delete Fund</button>
-      </div>
-      <hr />
-    </div>
-  </div>
-  <button (click)="add(fund)">Add Fund</button>
-</div> -->
+
+Name: <input [(ngModel)]="name" />
+<hr />
+Ticker: <input [(ngModel)]="ticker" />
+<hr />
+Asset class: <input [(ngModel)]="asset_class" />
+<hr />
+Risk level: <input [(ngModel)]="risk_level" />
+<hr />
+Expense ratio: <input [(ngModel)]="expense_ratio" />
+<br />
+Investment min: <input [(ngModel)]="investment_min" />
+<br />
+Price: <input [(ngModel)]="price" />
+<br />
+Change price: <input [(ngModel)]="change_price" />
+<br />
+Summary: <input [(ngModel)]="summary" />
+<br />
+<button (click)="add()">Add Fund</button>

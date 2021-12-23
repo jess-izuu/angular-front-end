@@ -9,7 +9,7 @@ import { Fund } from '../fund/fund.model';
   styleUrls: ['./edit-fund.component.scss'],
 })
 export class EditFundComponent implements OnInit {
-  fund: Fund = {};
+  fund: any = {};
 
   tempFundList: any[][] = [];
 
@@ -27,14 +27,24 @@ export class EditFundComponent implements OnInit {
         this.fund = payload;
 
         for (const [key, value] of Object.entries(this.fund)) {
-          const localArray = [key, value, false];
-          this.tempFundList.push(localArray);
+          if (key != 'id') {
+            const localArray = [key, value, false];
+            this.tempFundList.push(localArray);
+          }
         }
       });
     });
   }
 
+  reconstructFund(): void {
+    // const reconstructedFund: any = {};
+    this.tempFundList.forEach((item) => {
+      this.fund[item[0]] = item[1];
+    });
+  }
+
   update(): void {
+    this.reconstructFund();
     this.fundService.updateFund(this.fund).subscribe((payload) => {
       console.log('Update Payload', payload);
       if (payload) {
@@ -45,5 +55,10 @@ export class EditFundComponent implements OnInit {
 
   makeEditable(index: number) {
     this.tempFundList[index][2] = true;
+  }
+
+  makeStatic(index: number) {
+    console.log('hi');
+    this.tempFundList[index][2] = false;
   }
 }
