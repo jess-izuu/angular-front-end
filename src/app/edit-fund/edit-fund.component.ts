@@ -11,6 +11,8 @@ import { Fund } from '../fund/fund.model';
 export class EditFundComponent implements OnInit {
   fund: Fund = {};
 
+  tempFundList: any[][] = [];
+
   constructor(
     private route: ActivatedRoute,
     private fundService: FundService,
@@ -21,8 +23,13 @@ export class EditFundComponent implements OnInit {
     this.route.params.subscribe((params) => {
       const myid = +params['id'];
       this.fundService.getFund(myid).subscribe((payload) => {
-        console.log('Get Payload ', payload);
+        //console.log('Get Payload ', payload);
         this.fund = payload;
+
+        for (const [key, value] of Object.entries(this.fund)) {
+          const localArray = [key, value, false];
+          this.tempFundList.push(localArray);
+        }
       });
     });
   }
@@ -30,6 +37,13 @@ export class EditFundComponent implements OnInit {
   update(): void {
     this.fundService.updateFund(this.fund).subscribe((payload) => {
       console.log('Update Payload', payload);
+      if (payload) {
+        this.router.navigateByUrl('/funds/' + this.fund.id);
+      }
     });
+  }
+
+  makeEditable(index: number) {
+    this.tempFundList[index][2] = true;
   }
 }

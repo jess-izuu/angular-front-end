@@ -1,10 +1,24 @@
 <div class="container">
-  <p>Edit this fund!</p>
-  <div>NAME <input [(ngModel)]="fund.name" /></div>
+  <h1>Click to edit</h1>
+
+  <div *ngFor="let fund of tempFundList; let i = index">
+    <div (click)="makeEditable(i)" *ngIf="fund[2] == false">
+      {{ fund[0].includes("_") == true }}
+      {{ fund[0].charAt(0).toUpperCase() + fund[0].slice(1) }} :
+      {{ fund[1] }}
+    </div>
+
+    <div *ngIf="fund[2] == true">
+      {{ fund[0].charAt(0).toUpperCase() + fund[0].slice(1) }} :
+      <input [(ngModel)]="fund[1]" />
+    </div>
+    <hr />
+  </div>
+  <!-- <div>NAME <input [(ngModel)]="fund.name" /></div>
 
   <div>TICKER <input [(ngModel)]="fund.ticker" /></div>
   <div>ASSET CLASS <input [(ngModel)]="fund.asset_class" /></div>
   <div>RISK LEVEL <input [(ngModel)]="fund.risk_level" /></div>
-  <div>EXPENSE RATIO <input [(ngModel)]="fund.expense_ratio" /></div>
+  <div>EXPENSE RATIO <input [(ngModel)]="fund.expense_ratio" /></div> -->
   <button (click)="update()">update</button>
 </div>

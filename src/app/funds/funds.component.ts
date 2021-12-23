@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FundService } from '../fund.service';
 import { Fund } from '../fund/fund.model';
 import { Router } from '@angular/router';
+import { AddfundComponent } from '../addfund/addfund.component';
 
 @Component({
   selector: 'app-funds',
@@ -31,9 +32,7 @@ export class FundsComponent implements OnInit {
     });
   }
 
-  add(fund: any): void {
-    this.fundService.addFund(fund).subscribe((payload) => {
-      console.log(payload);
-    });
+  add(): void {
+    this.router.navigateByUrl(`/funds/${9}/add`);
   }
 }
