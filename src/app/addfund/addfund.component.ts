@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FundService } from '../fund.service';
+import { Fund } from '../fund/fund.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-addfund',
@@ -7,6 +9,8 @@ import { FundService } from '../fund.service';
   styleUrls: ['./addfund.component.scss'],
 })
 export class AddfundComponent implements OnInit {
+  newFund: Fund = {};
+  funds: Fund[] = [];
   name: string;
   ticker: string;
   asset_class: string;
@@ -18,7 +22,7 @@ export class AddfundComponent implements OnInit {
   summary: string;
   id: number;
 
-  constructor(private fundService: FundService) {
+  constructor(private fundService: FundService, private router: Router) {
     this.name = '';
     this.ticker = '';
     this.asset_class = '';
@@ -35,7 +39,7 @@ export class AddfundComponent implements OnInit {
 
   add() {
     //Add new ETF Fund
-    const newFund = {
+    this.newFund = {
       name: this.name,
       ticker: this.ticker,
       asset_class: this.asset_class,
@@ -48,7 +52,8 @@ export class AddfundComponent implements OnInit {
       id: this.id,
     };
 
-    console.log('New Fund ', newFund);
-    this.fundService.addFund(newFund).subscribe();
+    console.log('New Fund ', this.newFund);
+    this.fundService.addFund(this.newFund).subscribe();
+    this.router.navigateByUrl(`/funds`);
   }
 }
