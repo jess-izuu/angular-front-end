@@ -3,8 +3,10 @@
 
   <div *ngFor="let fund of tempFundList; let i = index">
     <div (click)="makeEditable(i)" *ngIf="fund[2] == false">
-      {{ fund[0].includes("_") == true }}
-      {{ fund[0].charAt(0).toUpperCase() + fund[0].slice(1) }} :
+      <strong>{{
+        fund[0].charAt(0).toUpperCase() + fund[0].slice(1).replace("_", " ")
+      }}</strong>
+      :
       {{ fund[1] }}
     </div>
 
