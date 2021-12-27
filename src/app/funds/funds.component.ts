@@ -18,6 +18,13 @@ export class FundsComponent implements OnInit {
   ) {}
 
   funds: Fund[] = [];
+  displayedColumns: string[] = [
+    'name',
+    'ticker',
+    'price',
+    'risk_level',
+    'buttons',
+  ];
 
   ngOnInit(): void {
     this.fundService.getFunds().subscribe((payload) => {

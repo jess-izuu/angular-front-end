@@ -41,6 +41,7 @@ export class AddfundComponent implements OnInit {
     this.change_price = '';
     this.summary = '';
     this.id = 0;
+
     this.form = formBuilder.group({
       name: this.name,
       ticker: this.ticker,
