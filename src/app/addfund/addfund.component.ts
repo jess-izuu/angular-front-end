@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FundService } from '../fund.service';
 import { Fund } from '../fund/fund.model';
 import { Router } from '@angular/router';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-addfund',
@@ -21,8 +22,13 @@ export class AddfundComponent implements OnInit {
   change_price: string;
   summary: string;
   id: number;
+  form: FormGroup;
 
-  constructor(private fundService: FundService, private router: Router) {
+  constructor(
+    private fundService: FundService,
+    private router: Router,
+    private formBuilder: FormBuilder
+  ) {
     this.name = '';
     this.ticker = '';
     this.asset_class = '';
@@ -33,6 +39,18 @@ export class AddfundComponent implements OnInit {
     this.change_price = '';
     this.summary = '';
     this.id = 0;
+    this.form = formBuilder.group({
+      name: this.name,
+      ticker: this.ticker,
+      asset_class: this.asset_class,
+      risk_level: this.risk_level,
+      expense_ratio: this.expense_ratio,
+      investment_min: this.investment_min,
+      price: this.price,
+      change_price: this.change_price,
+      summary: this.summary,
+      id: this.id,
+    });
   }
 
   ngOnInit(): void {}

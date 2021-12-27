@@ -7,11 +7,12 @@ import { FundsComponent } from './funds/funds.component';
 import { FundComponent } from './fund/fund.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EditFundComponent } from './edit-fund/edit-fund.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddfundComponent } from './addfund/addfund.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     BrowserAnimationsModule,
     MatButtonModule,
     MatDialogModule,
+    MatInputModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

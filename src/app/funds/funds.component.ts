@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FundService } from '../fund.service';
 import { Fund } from '../fund/fund.model';
 import { Router } from '@angular/router';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { AddfundComponent } from '../addfund/addfund.component';
 
 @Component({
@@ -39,7 +39,7 @@ export class FundsComponent implements OnInit {
 
   add(): void {
     // this.router.navigateByUrl(`/funds/${9}/add`);
-    const dialogConfig = new MatDialogConfig();
-    this.dialog.open(AddfundComponent, dialogConfig);
+    //const dialogConfig = new MatDialogConfig();
+    this.dialog.open(AddfundComponent);
   }
 }

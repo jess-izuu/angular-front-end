@@ -1,6 +1,51 @@
-<h1>Add a New ETF Fund</h1>
+<h1 mat-dialog-title><strong>New ETF Fund</strong></h1>
+<mat-dialog-component [formGroup]="form">
+  <mat-form-field>
+    <input matInput placeholder="ETF Name" formControlName="name" />
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <input matInput placeholder="Ticker" formControlName="ticker" />
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <input matInput placeholder="Asset Class" formControlName="asset_class" />
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <input matInput placeholder="Risk Level" formControlName="risk_level" />
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Expense Ratio"
+      formControlName="expense_ratio"
+    />
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Investment Minimum"
+      formControlName="investment_min"
+    />
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <input matInput placeholder="Price" formControlName="price" />
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <input matInput placeholder="Change Price" formControlName="change_price" />
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <input matInput placeholder="Summary" formControlName="summary" />
+  </mat-form-field>
+</mat-dialog-component>
 
-Name: <input [(ngModel)]="name" />
+<!-- Name: <input [(ngModel)]="name" />
 <hr />
 Ticker: <input [(ngModel)]="ticker" />
 <hr />
@@ -17,5 +62,10 @@ Price: <input [(ngModel)]="price" />
 Change price: <input [(ngModel)]="change_price" />
 <br />
 Summary: <input [(ngModel)]="summary" />
-<br />
-<button (click)="add()">Add Fund</button>
+<br /> -->
+
+<mat-dialog-actions>
+  <button mat-button class="mat-raised-button mat-primary" (click)="add()">
+    Add New Fund
+  </button>
+</mat-dialog-actions>
