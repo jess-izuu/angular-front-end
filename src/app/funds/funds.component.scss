@@ -5,6 +5,18 @@
   // box-shadow: 2px 2px 2px black;
 }
 
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.addBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .card-body {
   border-color: black;
 }

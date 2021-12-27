@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FundService } from '../fund.service';
 import { Fund } from '../fund/fund.model';
 import { Router } from '@angular/router';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { AddfundComponent } from '../addfund/addfund.component';
 
 @Component({
@@ -10,7 +11,11 @@ import { AddfundComponent } from '../addfund/addfund.component';
   styleUrls: ['./funds.component.scss'],
 })
 export class FundsComponent implements OnInit {
-  constructor(private fundService: FundService, private router: Router) {}
+  constructor(
+    private fundService: FundService,
+    private router: Router,
+    private dialog: MatDialog
+  ) {}
 
   funds: Fund[] = [];
 
@@ -33,6 +38,8 @@ export class FundsComponent implements OnInit {
   }
 
   add(): void {
-    this.router.navigateByUrl(`/funds/${9}/add`);
+    // this.router.navigateByUrl(`/funds/${9}/add`);
+    const dialogConfig = new MatDialogConfig();
+    this.dialog.open(AddfundComponent, dialogConfig);
   }
 }

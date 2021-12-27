@@ -1,6 +1,13 @@
 <div class="container">
-  <h1>Vanguard ETF Funds</h1>
-  <button (click)="add()"><i class="fas fa-plus"> Fund</i></button>
+  <div class="title">
+    <h1><strong>Vanguard ETF Funds</strong></h1>
+  </div>
+  <mat-dialog-actions>
+    <button mat-button class="mat-raised-button mat-primary" (click)="add()">
+      Add
+    </button>
+  </mat-dialog-actions>
+  <hr />
 
   <div class="row">
     <div class="col-sm-4" *ngFor="let fund of funds">
@@ -10,7 +17,14 @@
           {{ fund.price }}
         </p>
         <button (click)="edit(fund.id)"><i class="fas fa-edit"></i></button>
-        <button (click)="delete(fund)"><i class="fas fa-trash"></i></button>
+        <button
+          (click)="delete(fund)"
+          mat-fab
+          color="accent"
+          aria-label="Delete Fund"
+        >
+          <i class="fas fa-trash"></i>
+        </button>
       </div>
       <hr />
     </div>

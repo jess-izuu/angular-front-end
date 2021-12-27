@@ -10,6 +10,8 @@ import { EditFundComponent } from './edit-fund/edit-fund.component';
 import { FormsModule } from '@angular/forms';
 import { AddfundComponent } from './addfund/addfund.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     MatCardModule,
     BrowserAnimationsModule,
+    MatButtonModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
