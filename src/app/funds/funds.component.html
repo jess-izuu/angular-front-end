@@ -16,7 +16,9 @@
         <p class="card-text">
           {{ fund.price }}
         </p>
-        <button (click)="edit(fund.id)"><i class="fas fa-edit"></i></button>
+        <button (click)="edit(fund.id)" mat-fab color="primary">
+          <i class="fas fa-edit"></i>
+        </button>
         <button
           (click)="delete(fund)"
           mat-fab

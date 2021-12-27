@@ -1,24 +1,45 @@
 <h1 mat-dialog-title><strong>New ETF Fund</strong></h1>
 <mat-dialog-component [formGroup]="form">
   <mat-form-field>
-    <input matInput placeholder="ETF Name" formControlName="name" />
-  </mat-form-field>
-  <br />
-  <mat-form-field>
-    <input matInput placeholder="Ticker" formControlName="ticker" />
-  </mat-form-field>
-  <br />
-  <mat-form-field>
-    <input matInput placeholder="Asset Class" formControlName="asset_class" />
-  </mat-form-field>
-  <br />
-  <mat-form-field>
-    <input matInput placeholder="Risk Level" formControlName="risk_level" />
+    <input
+      matInput
+      [(ngModel)]="name"
+      placeholder="ETF Name"
+      formControlName="name"
+    />
   </mat-form-field>
   <br />
   <mat-form-field>
     <input
       matInput
+      [(ngModel)]="ticker"
+      placeholder="Ticker"
+      formControlName="ticker"
+    />
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <input
+      matInput
+      [(ngModel)]="asset_class"
+      placeholder="Asset Class"
+      formControlName="asset_class"
+    />
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <input
+      matInput
+      [(ngModel)]="risk_level"
+      placeholder="Risk Level"
+      formControlName="risk_level"
+    />
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <input
+      matInput
+      [(ngModel)]="expense_ratio"
       placeholder="Expense Ratio"
       formControlName="expense_ratio"
     />
@@ -27,21 +48,37 @@
   <mat-form-field>
     <input
       matInput
+      [(ngModel)]="investment_min"
       placeholder="Investment Minimum"
       formControlName="investment_min"
     />
   </mat-form-field>
   <br />
   <mat-form-field>
-    <input matInput placeholder="Price" formControlName="price" />
+    <input
+      matInput
+      [(ngModel)]="price"
+      placeholder="Price"
+      formControlName="price"
+    />
   </mat-form-field>
   <br />
   <mat-form-field>
-    <input matInput placeholder="Change Price" formControlName="change_price" />
+    <input
+      matInput
+      [(ngModel)]="change_price"
+      placeholder="Change Price"
+      formControlName="change_price"
+    />
   </mat-form-field>
   <br />
   <mat-form-field>
-    <input matInput placeholder="Summary" formControlName="summary" />
+    <input
+      matInput
+      [(ngModel)]="summary"
+      placeholder="Summary"
+      formControlName="summary"
+    />
   </mat-form-field>
 </mat-dialog-component>
 

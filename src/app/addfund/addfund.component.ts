@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FundService } from '../fund.service';
 import { Fund } from '../fund/fund.model';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-addfund',
@@ -27,7 +28,8 @@ export class AddfundComponent implements OnInit {
   constructor(
     private fundService: FundService,
     private router: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private dialogRef: MatDialogRef<AddfundComponent>
   ) {
     this.name = '';
     this.ticker = '';
@@ -72,6 +74,7 @@ export class AddfundComponent implements OnInit {
 
     console.log('New Fund ', this.newFund);
     this.fundService.addFund(this.newFund).subscribe();
+    this.dialogRef.close();
     this.router.navigateByUrl(`/funds`);
   }
 }
