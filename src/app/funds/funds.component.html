@@ -24,6 +24,18 @@
       <td mat-cell *matCellDef="let fund">{{ fund.ticker }}</td>
     </ng-container>
 
+    <!-- Asset Class Column -->
+    <ng-container matColumnDef="asset">
+      <th mat-header-cell *matHeaderCellDef>Asset Class</th>
+      <td mat-cell *matCellDef="let fund">{{ fund.asset_class }}</td>
+    </ng-container>
+
+    <!-- Expense Ratio Column -->
+    <ng-container matColumnDef="expense">
+      <th mat-header-cell *matHeaderCellDef>Expense Ratio</th>
+      <td mat-cell *matCellDef="let fund">{{ fund.expense_ratio }}</td>
+    </ng-container>
+
     <!-- Price Column -->
     <ng-container matColumnDef="price">
       <th mat-header-cell *matHeaderCellDef>Price</th>
@@ -54,27 +66,4 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
-
-  <!-- <div class="row">
-    <div class="col-sm-4" *ngFor="let fund of funds">
-      <div class="card-body">
-        <a [routerLink]="['/funds', fund.id]"> {{ fund.name }}</a>
-        <p class="card-text">
-          {{ fund.price }}
-        </p>
-        <button (click)="edit(fund.id)" mat-fab color="primary">
-          <i class="fas fa-edit"></i>
-        </button>
-        <button
-          (click)="delete(fund)"
-          mat-fab
-          color="accent"
-          aria-label="Delete Fund"
-        >
-          <i class="fas fa-trash"></i>
-        </button>
-      </div>
-      <hr />
-    </div>
-  </div> -->
 </div>

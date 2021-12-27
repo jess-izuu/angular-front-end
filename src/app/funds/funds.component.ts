@@ -21,6 +21,8 @@ export class FundsComponent implements OnInit {
   displayedColumns: string[] = [
     'name',
     'ticker',
+    'asset',
+    'expense',
     'price',
     'risk_level',
     'buttons',

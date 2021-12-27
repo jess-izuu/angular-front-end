@@ -34,9 +34,10 @@ a {
 .mat-column-name {
   width: 444px;
   border-right: 1px solid currentColor;
-  padding-right: 444px;
+  padding-right: 54px;
   text-align: center;
   flex-wrap: nowrap;
+  font-size: 20px;
 }
 
 .mat-column-ticker {
@@ -44,12 +45,30 @@ a {
   font-size: 20px;
 }
 
+.mat-column-asset {
+  padding-left: 16px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.mat-column-expense {
+  padding-left: 2px;
+  font-size: 18px;
+  text-align: center;
+}
+
 .mat-column-price {
+  padding-left: 12px;
   font-style: italic;
+  font-size: 20px;
 }
 
 .mat-column-risk_level {
   width: 32px;
   text-align: center;
   font-weight: bold;
+  padding-left: 12px;
+  padding-right: 30px;
+  font-size: 20px;
+  flex-wrap: nowrap;
 }
