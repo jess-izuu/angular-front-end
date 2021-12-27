@@ -59,16 +59,16 @@ a {
 
 .mat-column-price {
   padding-left: 12px;
-  font-style: italic;
   font-size: 20px;
+  text-align: center;
 }
 
 .mat-column-risk_level {
-  width: 32px;
+  width: 175px;
   text-align: center;
   font-weight: bold;
-  padding-left: 12px;
-  padding-right: 30px;
+  padding-left: 15px;
+  padding-right: 25px;
   font-size: 20px;
   flex-wrap: nowrap;
 }
