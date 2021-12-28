@@ -21,7 +21,6 @@ export class AddfundComponent implements OnInit {
   investment_min: string;
   price: string;
   change_price: string;
-  summary: string;
   id: number;
   form: FormGroup;
 
@@ -39,7 +38,6 @@ export class AddfundComponent implements OnInit {
     this.investment_min = '';
     this.price = '';
     this.change_price = '';
-    this.summary = '';
     this.id = 0;
 
     this.form = formBuilder.group({
@@ -51,7 +49,6 @@ export class AddfundComponent implements OnInit {
       investment_min: this.investment_min,
       price: this.price,
       change_price: this.change_price,
-      summary: this.summary,
       id: this.id,
     });
   }
@@ -69,7 +66,6 @@ export class AddfundComponent implements OnInit {
       investment_min: this.investment_min,
       price: this.price,
       change_price: this.change_price,
-      summary: this.summary,
       id: this.id,
     };
 

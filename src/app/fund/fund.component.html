@@ -3,7 +3,7 @@
     <strong>{{ fund.name }}</strong>
   </h1>
 
-  <h2>ETF Facts</h2>
+  <h2>S u m m a r y</h2>
   <hr />
   <p>
     <strong>Ticker:</strong> {{ fund.ticker }}
@@ -14,17 +14,18 @@
     <br />
   </p>
 
-  <h2>Pricing</h2>
+  <h2>P r i c i n g</h2>
   <hr />
   <p>
-    <strong>Expense ratio:</strong> {{ fund.expense_ratio }}
+    <strong>Expense ratio:</strong> {{ fund.expense_ratio }}%
     <br />
     <strong>Investment min:</strong> {{ fund.investment_min }}
     <br />
-    <strong>Price:</strong> {{ fund.price }}
+    <strong>Price:</strong> ${{ fund.price }}
     <br />
     <strong>Change price:</strong> {{ fund.change_price }}
   </p>
-
-  <button (click)="edit()">Edit Fund</button>
+  <button (click)="edit()" mat-button color="grey">
+    <i class="fas fa-edit"></i>
+  </button>
 </div>

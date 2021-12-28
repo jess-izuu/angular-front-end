@@ -7,6 +7,5 @@ export interface Fund {
   investment_min?: string;
   price?: string;
   change_price?: string;
-  summary?: string;
   id?: number;
 }

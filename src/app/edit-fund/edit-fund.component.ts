@@ -27,7 +27,7 @@ export class EditFundComponent implements OnInit {
         this.fund = payload;
 
         for (const [key, value] of Object.entries(this.fund)) {
-          if (key != 'id') {
+          if (key != 'id' && key != 'summary') {
             const localArray = [key, value, false];
             this.tempFundList.push(localArray);
           }
