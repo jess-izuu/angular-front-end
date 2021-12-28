@@ -39,7 +39,7 @@ export class FundsComponent implements OnInit {
   }
 
   delete(fund: any): void {
-    this.fundService.deleteFund(fund.id).subscribe((fund) => {
+    this.fundService.deleteFund(fund.id).subscribe(() => {
       this.fundService.getFunds().subscribe((payload) => {
         this.funds = payload;
       });
@@ -48,7 +48,6 @@ export class FundsComponent implements OnInit {
 
   add(): void {
     // this.router.navigateByUrl(`/funds/${9}/add`);
-    //const dialogConfig = new MatDialogConfig();
     this.dialog.open(AddfundComponent);
   }
 }

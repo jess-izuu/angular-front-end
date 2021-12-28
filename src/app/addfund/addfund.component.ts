@@ -55,8 +55,10 @@ export class AddfundComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  add() {
+  add(): void {
     //Add new ETF Fund
+    this.dialogRef.close();
+
     this.newFund = {
       name: this.name,
       ticker: this.ticker,
@@ -71,7 +73,6 @@ export class AddfundComponent implements OnInit {
 
     console.log('New Fund ', this.newFund);
     this.fundService.addFund(this.newFund).subscribe();
-    this.dialogRef.close();
     this.router.navigateByUrl(`/funds`);
   }
 }
