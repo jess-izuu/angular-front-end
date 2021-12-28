@@ -6,24 +6,24 @@
   <h2>ETF Facts</h2>
   <hr />
   <p>
-    Ticker: {{ fund.ticker }}
+    <strong>Ticker:</strong> {{ fund.ticker }}
     <br />
-    Asset class: {{ fund.asset_class }}
+    <strong>Asset class:</strong> {{ fund.asset_class }}
     <br />
-    Risk level: {{ fund.risk_level }}
+    <strong>Risk level:</strong> {{ fund.risk_level }}
     <br />
   </p>
 
   <h2>Pricing</h2>
   <hr />
   <p>
-    Expense ratio: {{ fund.expense_ratio }}
+    <strong>Expense ratio:</strong> {{ fund.expense_ratio }}
     <br />
-    Investment min: {{ fund.investment_min }}
+    <strong>Investment min:</strong> {{ fund.investment_min }}
     <br />
-    Price: {{ fund.price }}
+    <strong>Price:</strong> {{ fund.price }}
     <br />
-    Change price: {{ fund.change_price }}
+    <strong>Change price:</strong> {{ fund.change_price }}
   </p>
 
   <button (click)="edit()">Edit Fund</button>

@@ -1,14 +1,25 @@
-.container {
-  background-color: grey;
-  // width: 300px;
-  // border-radius: 3px;
-  // box-shadow: 2px 2px 2px black;
+h1 {
+  padding-top: 20px;
 }
-
 .title {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+.mat-button.mat-red {
+  background-color: rgb(162, 10, 53);
+  color: black;
+  font-size: 25px;
+  padding: 4px 2px;
+  margin: 5px 5px;
+}
+.mat-button.mat-grey {
+  background-color: rgb(121, 117, 118);
+  color: black;
+  font-size: 25px;
+  padding: 4px 2px;
+  margin: 5px 5px;
 }
 
 .addBtn {
@@ -28,7 +39,6 @@ a {
 
 .demo-table {
   width: 100%;
-  background-color: grey;
 }
 
 .mat-column-name {
@@ -38,37 +48,43 @@ a {
   text-align: center;
   flex-wrap: nowrap;
   font-size: 20px;
+  color: black;
 }
 
 .mat-column-ticker {
   padding-left: 16px;
   font-size: 20px;
+  color: black;
 }
 
 .mat-column-asset {
   padding-left: 16px;
   font-size: 18px;
   text-align: center;
+  color: black;
 }
 
 .mat-column-expense {
   padding-left: 2px;
   font-size: 18px;
   text-align: center;
+  color: black;
 }
 
 .mat-column-price {
   padding-left: 12px;
   font-size: 20px;
   text-align: center;
+  color: black;
 }
 
 .mat-column-risk_level {
-  width: 175px;
+  width: 125px;
   text-align: center;
   font-weight: bold;
   padding-left: 15px;
   padding-right: 25px;
-  font-size: 20px;
+  font-size: 25px;
   flex-wrap: nowrap;
+  color: black;
 }
